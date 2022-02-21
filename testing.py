@@ -42,7 +42,6 @@ while True:
     else:
         selected_ids.append(selected_id)
 
-# outputs for receipts
 print("------------------------------------")
 print("TK's Delicatessen")
 print("------------------------------------")
@@ -88,5 +87,5 @@ print ("SUBTOTAL:", to_usd(subtotal_price))
 print ("TAX:", to_usd(tax))
 print ("TOTAL:", to_usd(total))
 print("-----------------------------")
-print("THANKS, SEE YOU AGAIN SOON!")
+print("Thanks for shopping, please come by soon!")
 print("-----------------------------")
