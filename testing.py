@@ -36,7 +36,7 @@ subtotal_price = 0
 selected_ids = []
 
 while True:
-    selected_id = input("Please input a product identifier: ").lower
+    selected_id = input("Please input a product identifier: ").lower()
     if selected_id == "done":
         break
     else:
