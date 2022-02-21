@@ -41,7 +41,7 @@ while True:
     if selected_id == "done":
         break
     if int(selected_id) > len(products) or int(selected_id) <=0:
-        print("OOPS! Invalid ID, try again!")
+        print("OOPS! Invalid ID, try ag")
     else:
         selected_ids.append(selected_id)
 
@@ -73,9 +73,6 @@ for selected_id in selected_ids:
 #################### subtotal, tax, total
 
 import os 
-from dotenv import load_dotenv
-
-load_dotenv()
 
 
 tax_rate = (os.getenv("TAX_RATE", default = 0.0875))
