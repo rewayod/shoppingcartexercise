@@ -76,7 +76,7 @@ for selected_id in selected_ids:
 import os 
 
 
-tax_rate = default = 0.0875))
+tax_rate = 0.0875
 
 tax = subtotal_price * tax_rate
 total = subtotal_price + tax
