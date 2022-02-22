@@ -58,7 +58,7 @@ from datetime import datetime
 now = datetime.now()
  
 dt_string = now.strftime("%m/%d/%y %H:%M:%S")
-print("CHECKOUT AT:", dt_string)
+print("CHECKOUT TIME:", dt_string)
 print("-----------------------------")
 print("SELECTED PRODUCTS:")
 
@@ -76,9 +76,9 @@ for selected_id in selected_ids:
 import os 
 
 
-tax_rate = (os.getenv("TAX_RATE", default = 0.0875))
+tax_rate = default = 0.0875))
 
-tax = subtotal_price * float(tax_rate)
+tax = subtotal_price * tax_rate
 total = subtotal_price + tax
 
 # Bottom of receipt
