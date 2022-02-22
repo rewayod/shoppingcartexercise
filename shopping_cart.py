@@ -1,5 +1,5 @@
 # shopping_cart.py
-
+import os
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
@@ -71,10 +71,15 @@ for selected_id in selected_ids:
 
 
 #Totals
+from dotenv import load_dotenv
 
-tax_rate = 0.0875
+load_dotenv()
 
-tax = subtotal_price * tax_rate
+
+tax_rate = (os.getenv("TAX_RATE", default = 0.0875))
+print(tax_rate)
+
+tax = subtotal_price * float(tax_rate)
 total = subtotal_price + tax
 
 # Bottom of receipt
@@ -83,5 +88,12 @@ print ("SUBTOTAL:", to_usd(subtotal_price))
 print ("SALES TAX:", to_usd(tax))
 print ("TOTAL:", to_usd(total))
 print("-----------------------------")
-print("Thanks for shopping, please come back soon!")
+receiptask = input("Would you like an email copy of your receipt? (Yes/No):")
+if receiptask == "Yes":
+    customeremail = input("Please enter your email address:")
+    #an attempt was made
+    SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY", default="Please set env var called 'SENDGRID_API_KEY'")
+    SENDER_ADDRESS = os.getenv("SENDER_ADDRESS", default="Please set env var called 'SENDER_ADDRESS'")
 print("-----------------------------")
+
+print("Thanks for shopping, please come back soon!")
