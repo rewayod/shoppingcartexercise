@@ -80,10 +80,10 @@ tax_rate = (os.getenv("TAX_RATE", default = 0.0875))
 tax = subtotal_price * float(tax_rate)
 total = subtotal_price + tax
 
-#################### END OF RECEIPT
+# Bottom of receipt
 print("-----------------------------") 
 print ("SUBTOTAL:", to_usd(subtotal_price))
-print ("TAX:", to_usd(tax))
+print ("SALES TAX:", to_usd(tax))
 print ("TOTAL:", to_usd(total))
 print("-----------------------------")
 print("Thanks for shopping, please come by soon!")
