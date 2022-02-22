@@ -29,14 +29,6 @@ Install package dependencies (mainly for testing):
 pip install -r requirements.txt
 ```
 
-## Usage
-
-Run the shopping cart script:
-
-```sh
-python shopping_cart.py
-```
-
 ## Testing
 
 Run tests:
