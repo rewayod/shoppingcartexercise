@@ -49,7 +49,7 @@ print("------------------------------------")
 print("TK's Delicatessen")
 print("------------------------------------")
 print("Website: www.tkdeli.com")
-print("Phone: 1-201-340-5039")
+print("Phone Number: 1-201-340-5039")
 print("------------------------------------")
 
 #################### displaying current date and time, https://www.programiz.com/python-programming/datetime/current-datetime
