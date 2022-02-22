@@ -73,9 +73,6 @@ for selected_id in selected_ids:
 
 #################### subtotal, tax, total
 
-import os 
-
-
 tax_rate = 0.0875
 
 tax = subtotal_price * tax_rate
