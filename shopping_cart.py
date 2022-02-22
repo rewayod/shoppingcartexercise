@@ -38,7 +38,7 @@ subtotal_price = 0
 selected_ids = []
 
 while True:
-    selected_id = input("Please input a product identifier: ").lower()
+    selected_id = input("Please input a product identifier, or write DONE if you are finished with your order: ").lower()
     if selected_id == "done":
         break
     if int(selected_id) > len(products) or int(selected_id) <=0:
@@ -54,7 +54,7 @@ print("Phone Number: 1-201-340-5039")
 print("------------------------------------")
 
 #datetime
-from datetime import datetime
+from datetime import datetime  
 now = datetime.now()
  
 dt_string = now.strftime("%m/%d/%y %H:%M:%S")
