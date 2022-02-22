@@ -76,7 +76,6 @@ import os
 
 
 tax_rate = (os.getenv("TAX_RATE", default = 0.0875))
-print(tax_rate)
 
 tax = subtotal_price * float(tax_rate)
 total = subtotal_price + tax
