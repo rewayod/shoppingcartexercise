@@ -48,8 +48,9 @@ while True:
 print("------------------------------------")
 print("TK's Delicatessen")
 print("------------------------------------")
-print("Web: www.tkdeli.com")
+print("Website: www.tkdeli.com")
 print("Phone: 1-201-340-5039")
+print("------------------------------------")
 
 #################### displaying current date and time, https://www.programiz.com/python-programming/datetime/current-datetime
 from datetime import datetime
