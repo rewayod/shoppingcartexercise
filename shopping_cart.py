@@ -1,16 +1,7 @@
 # shopping_cart.py
 
 products = [
-    {
-        "id":1,
-        "name": "Chocolate Sandwich Cookies",
-        "department": "snacks",
-        "aisle": "cookies cakes",
-        "price": 3.50
-    },
-
-
-
+    {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
     {"id":3, "name": "Robust Golden Unsweetened Oolong Tea", "department": "beverages", "aisle": "tea", "price": 2.49},
     {"id":4, "name": "Smart Ones Classic Favorites Mini Rigatoni With Vodka Cream Sauce", "department": "frozen", "aisle": "frozen meals", "price": 6.99},
@@ -32,22 +23,6 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
-while True: 
-    selected_id = input("Please input a product identifier OR a 'DONE' to end the program: ")
-    if selected_id== "DONE":
-        break
-    else: 
-        selected_ids.append(selected_id)
-
-
-
-for selected_id in selected_ids: 
-    matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
-    matching_product = matching_products [0]
-    total_price = total_price + matching_product["price"]
-print("SELECTED PRODUCT: " + matching_product["name"] + " " + str(matching_product["price"]))
-
-
 
 def to_usd(my_price):
     """
@@ -59,35 +34,53 @@ def to_usd(my_price):
     return f"${my_price:,.2f}" #> $12,000.71
 
 
+subtotal_price = 0
+selected_ids = []
 
 while True:
-
-    # ASK FOR USER INPUT
-
-    product_id = input("Please input a product identifier: ")
-    print(product_id) #> "9"
-    print(type(product_id)) #> str
-    if product_id == "DONE":
+    selected_id = input("Please input a product identifier: ").lower()
+    if selected_id == "done":
         break
+    if int(selected_id) > len(products) or int(selected_id) <=0:
+        print("OOPS! Invalid ID, try again.")
+    else:
+        selected_ids.append(selected_id)
 
-    # LOOK UP CORRESPONDING PRODUCTS
+print("------------------------------------")
+print("TK's Delicatessen")
+print("------------------------------------")
+print("Website: www.tkdeli.com")
+print("Phone Number: 1-201-340-5039")
+print("------------------------------------")
 
-    # print product that has an id attribute equal to "9"
+#datetime
+now = datetime.now()
+ 
+dt_string = now.strftime("%m/%d/%y %H:%M:%S")
+print("CHECKOUT TIME:", dt_string)
+print("-----------------------------")
+print("SELECTED PRODUCTS:")
 
-    matching_products = []
 
-    for x in products:
-        #if x == 3:
-        #    ___.append(x)
-        #print(x)
-        #print(x["id"])
-        if str(x["id"]) == str(product_id):
-            # this is a match
-            matching_products.append(x)
-
-    #print(matching_products)
-    #print(type(matching_products))
-    #print(len(matching_products))
-    # print the name of the matching product
+for selected_id in selected_ids:
+    matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
     matching_product = matching_products[0]
-    print(matching_product["name"], matching_product["price"])
+    subtotal_price = subtotal_price + matching_product["price"]
+    print("... ",matching_product["name"], "(" + str(to_usd(matching_product["price"])) + ")")
+
+
+#Totals
+
+tax_rate = 0.0875
+
+tax = subtotal_price * tax_rate
+total = subtotal_price + tax
+
+# Bottom of receipt
+print("-----------------------------") 
+print ("SUBTOTAL:", to_usd(subtotal_price))
+print ("SALES TAX:", to_usd(tax))
+print ("TOTAL:", to_usd(total))
+print("-----------------------------")
+print("Thanks for shopping, please come back soon!")
+print("-----------------------------")
