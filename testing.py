@@ -41,7 +41,7 @@ while True:
     if selected_id == "done":
         break
     if int(selected_id) > len(products) or int(selected_id) <=0:
-        print("OOPS! Invalid ID, try ag")
+        print("OOPS! Invalid ID, try again.")
     else:
         selected_ids.append(selected_id)
 
